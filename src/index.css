@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Mudila Chendu - AI/ML & CSE Portfolio
+   Style: NEO-BRUTALISM (High-contrast, bold borders, hard shadows, vibrant accents)
+   STRICT RULE: Absolutely NO Blue and NO Purple.
+   ========================================================================== */
+
+:root {
+  /* Neo-Brutalist Core Palette */
+  --nb-bg: #fffdf5;          /* Warm cream retro canvas */
+  --nb-surface: #ffffff;     /* Crisp white card surface */
+  --nb-black: #050505;       /* Solid ink black */
+  --nb-dark: #121212;
+
+  /* Accent Colors (Strictly NO blue, NO purple) */
+  --nb-lime: #a3e635;        /* Electric Neo Lime */
+  --nb-lime-light: #d9f99d;
+  --nb-yellow: #facc15;      /* Cyber Mustard Yellow */
+  --nb-yellow-light: #fef08a;
+  --nb-orange: #fb923c;      /* Tangerine Orange */
+  --nb-orange-light: #ffedd5;
+  --nb-emerald: #10b981;     /* Vivid Emerald */
+  --nb-emerald-light: #a7f3d0;
+  --nb-coral: #f87171;       /* Warm Coral Red */
+
+  /* Neutral tones */
+  --nb-gray-bg: #f4f3ef;
+  --nb-gray-border: #262626;
+  --nb-text-main: #0a0a0a;
+  --nb-text-muted: #4b5563;
+
+  /* Brutalist Shadows & Borders */
+  --nb-border-width: 3px;
+  --nb-border: var(--nb-border-width) solid var(--nb-black);
+  --nb-border-sm: 2px solid var(--nb-black);
+  
+  --nb-shadow-sm: 3px 3px 0px var(--nb-black);
+  --nb-shadow: 5px 5px 0px var(--nb-black);
+  --nb-shadow-lg: 8px 8px 0px var(--nb-black);
+  --nb-shadow-hover: 2px 2px 0px var(--nb-black);
+
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --radius-sharp: 0px;
+  --radius-card: 10px;
+  --radius-btn: 6px;
+  --radius-pill: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-main);
+  background-color: var(--nb-bg);
+  color: var(--nb-text-main);
+  line-height: 1.55;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--nb-bg);
+  background-image: radial-gradient(var(--nb-black) 1px, transparent 1px);
+  background-size: 24px 24px;
+  min-height: 100vh;
+  color: var(--nb-text-main);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--nb-bg);
+  border-left: 2px solid var(--nb-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--nb-yellow);
+  border: 2px solid var(--nb-black);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nb-lime);
+}
+
+/* Selection */
+::selection {
+  background: var(--nb-black);
+  color: var(--nb-yellow);
+}
+
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--nb-black);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: #1f2937;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Section Common Styling */
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.nb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  border: var(--nb-border-sm);
+  border-radius: var(--radius-btn);
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--nb-yellow);
+  color: var(--nb-black);
+  box-shadow: 3px 3px 0px var(--nb-black);
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.85rem);
+  font-weight: 900;
+  margin-bottom: 0.85rem;
+  color: var(--nb-black);
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #374151;
+  max-width: 640px;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+/* Neo-Brutalist Cards */
+.nb-card {
+  background: var(--nb-surface);
+  border: var(--nb-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--nb-shadow);
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nb-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px var(--nb-black);
+}
+
+/* Neo-Brutalist Buttons */
+.nb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-btn);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: var(--nb-border);
+  box-shadow: var(--nb-shadow-sm);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-family: var(--font-mono);
+}
+
+.nb-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--nb-black);
+}
+
+.nb-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--nb-black);
+}
+
+.nb-btn-lime {
+  background: var(--nb-lime);
+  color: var(--nb-black);
+}
+.nb-btn-lime:hover {
+  background: #bef264;
+}
+
+.nb-btn-yellow {
+  background: var(--nb-yellow);
+  color: var(--nb-black);
+}
+.nb-btn-yellow:hover {
+  background: #fde047;
+}
+
+.nb-btn-orange {
+  background: var(--nb-orange);
+  color: var(--nb-black);
+}
+.nb-btn-orange:hover {
+  background: #fdba74;
+}
+
+.nb-btn-white {
+  background: #ffffff;
+  color: var(--nb-black);
+}
+.nb-btn-white:hover {
+  background: #f3f4f6;
+}
+
+.nb-btn-dark {
+  background: var(--nb-black);
+  color: #ffffff;
+}
+.nb-btn-dark:hover {
+  background: #262626;
+  color: var(--nb-yellow);
+}
+
+/* Neo-Brutalist Icon Button */
+.nb-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-btn);
+  background: #ffffff;
+  border: var(--nb-border-sm);
+  color: var(--nb-black);
+  box-shadow: 3px 3px 0px var(--nb-black);
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.nb-icon-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--nb-black);
+  background: var(--nb-yellow);
+}
+
+.nb-icon-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--nb-black);
+}
+
+/* Neo-Brutalist Tags */
+.nb-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  border: 1.5px solid var(--nb-black);
+  font-size: 0.775rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  box-shadow: 2px 2px 0px var(--nb-black);
+  background: #ffffff;
+}
+
+/* Neo-Brutalist Ticker/Marquee */
+.nb-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--nb-yellow);
+  border-top: var(--nb-border);
+  border-bottom: var(--nb-border);
+  padding: 0.65rem 0;
+  display: flex;
+}
+
+.nb-marquee-track {
+  display: inline-flex;
+  animation: marquee 22s linear infinite;
+  gap: 2rem;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: var(--nb-black);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Sticker Tag */
+.nb-sticker {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 0.8125rem;
+  padding: 0.35rem 0.75rem;
+  border: var(--nb-border-sm);
+  box-shadow: 3px 3px 0px var(--nb-black);
+  text-transform: uppercase;
+}
